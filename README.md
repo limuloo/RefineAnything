@@ -5,6 +5,7 @@
 <a href="https://limuloo.github.io/RefineAnything/"><img src="https://img.shields.io/badge/Project-Page-blue" /></a>
 <a href="https://arxiv.org/abs/2604.06870"><img src="https://img.shields.io/badge/arXiv-2604.06870-b31b1b" /></a>
 <a href="https://github.com/limuloo/RefineAnything"><img src="https://img.shields.io/badge/GitHub-Code-black?logo=github" /></a>
+<a href="https://huggingface.co/limuloo1999/RefineAnything"><img src="https://img.shields.io/badge/HuggingFace-Checkpoint-yellow?logo=huggingface" /></a>
 
 RefineAnything targets **region-specific image refinement**: given an input image and a user-specified region (e.g., scribble mask or bounding box), it restores fine-grained details—text, logos, thin structures—while keeping **all non-edited pixels unchanged**. It supports both **reference-based** and **reference-free** refinement.
 
@@ -12,7 +13,7 @@ RefineAnything targets **region-specific image refinement**: given an input imag
 ---
 
 ## News
-🔥 The checkpoint will be released very soon!
+- **2026-04-09** — Checkpoint released on Hugging Face: <https://huggingface.co/limuloo1999/RefineAnything>.
 - **2026-04-09** — Release inference scripts.
 - **2026-04-08** — Documentation skeleton added; **code release coming this month** (inference scripts, environment, and checkpoints will be linked here).
 - **TBD** — Checkpoints and training/evaluation resources will be announced once finalized.
