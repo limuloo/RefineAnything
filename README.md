@@ -15,6 +15,8 @@ RefineAnything targets **region-specific image refinement**: given an input imag
 ---
 
 ## News
+- **2026-04-21** — **Environment pinning update.** For best results (and to avoid color shifts), please use **exactly** the versions pinned in `requirement.txt`: `diffusers==0.36.0`, `transformers==4.55.0`, `safetensors==0.5.3`, `peft==0.17.0`. See [Environment Notice](#environment-notice) below for a visual comparison.
+- **2026-04-21** — **Hugging Face Space environment fixed.** The online demo now runs on the correct dependency versions, so refinement results are noticeably better: <https://huggingface.co/spaces/limuloo1999/RefineAnything>.
 - **2026-04-14** — Community ComfyUI integration by [@smthemex](https://github.com/smthemex): [ComfyUI_RefineAnything](https://github.com/smthemex/ComfyUI_RefineAnything). Thanks for the great work!
 - **2026-04-14** — Local Gradio demo (`app.py`) is available for interactive testing.
 - **2026-04-12** — Hugging Face Space demo is live: <https://huggingface.co/spaces/limuloo1999/RefineAnything>.
@@ -46,6 +48,36 @@ RefineAnything targets **region-specific image refinement**: given an input imag
 ```bash
 pip install -r requirement.txt
 ```
+
+> **Important — pin these versions exactly.** RefineAnything is sensitive to small numerical differences in the underlying libraries. Please install **exactly** the versions below; using newer or older releases can cause visible artifacts such as color shifts in the refined region.
+>
+> ```
+> diffusers==0.36.0
+> transformers==4.55.0
+> safetensors==0.5.3
+> peft==0.17.0
+> ```
+
+---
+
+## Environment Notice
+
+We have observed that mismatched versions of `diffusers` / `transformers` / `safetensors` / `peft` can introduce **color shifts** in the refined region, even when everything else is identical. The example below uses the prompt *"remove the hand"*:
+
+<table>
+<tr>
+<td align="center"><b>Input (masked region = hand)</b></td>
+<td align="center"><b>Correct environment</b></td>
+<td align="center"><b>Wrong environment (color shift)</b></td>
+</tr>
+<tr>
+<td><img src="docs/static/env_check_input.png" width="100%"></td>
+<td><img src="docs/static/correct_env_result.png" width="100%"></td>
+<td><img src="docs/static/wrong_env_result.png" width="100%"></td>
+</tr>
+</table>
+
+If your output shows a mild color/tone mismatch inside the mask while the rest of the image looks fine, the first thing to check is your package versions.
 
 ---
 
